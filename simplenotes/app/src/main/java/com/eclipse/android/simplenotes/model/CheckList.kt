@@ -1,7 +1,22 @@
 package com.eclipse.android.simplenotes.model
 
-class CheckList {
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-    val status=0 // 0 for unchecked,1 for checked
-    val description="";
-}
+@Entity
+data class  CheckList (
+@PrimaryKey(autoGenerate = true)
+val id: Int? = null,
+var status: Int?=0,
+var description :String?="")
+
+   /* @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "status") var status: Int=0//should change to enum
+    @ColumnInfo(name = "description") var description: String=""
+
+    init{
+        this.description=description;
+        this.status=status;
+    }*/
+
